@@ -1,0 +1,713 @@
+/* ==========================================================================
+   日本旅遊探索庫 Japan Travel Wiki
+   日系・簡約・優雅・奶油色系・質感旅行手帳
+   主色調：奶油白、米色、奶油藍、燕麥色、淺咖啡色、深咖啡色
+   ========================================================================== */
+
+:root {
+  --cream-white: #fcfaf5;
+  --cream-card: rgba(253, 251, 246, 0.92);
+  --cream-card-solid: #fdfbf6;
+  --beige-bg: #f4efe6;
+  --cream-blue: #bfd2e4;
+  --cream-blue-soft: #e6eef5;
+  --oatmeal: #e7dfd1;
+  --oatmeal-light: #f1ece2;
+  --light-coffee: #9b8370;
+  --deep-coffee: #4a3b32;
+  --deep-coffee-hover: #362a23;
+  --line-hairline: #ddd3c3;
+  --line-subtle: #e6decb;
+  --shadow-soft: rgba(74, 59, 50, 0.06);
+  --shadow-hover: rgba(74, 59, 50, 0.12);
+
+  --font-serif: "Noto Serif TC", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "PingFang TC", sans-serif;
+  --font-en: "Cormorant Garamond", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--deep-coffee);
+  background-color: var(--beige-bg);
+  min-height: 100vh;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------------------------------
+   固定全螢幕雪景背景（雪往下降、飛機獨立飛翔、雲朵緩飄、車往前開、路保持靜止）
+   -------------------------------------------------------------------------- */
+.scenic-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.scenic-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 蓬鬆雲朵獨立緩慢飄動 */
+.cloud-drift-slow {
+  animation: cloudFloatA 42s ease-in-out infinite alternate;
+}
+
+.cloud-drift-right {
+  animation: cloudFloatB 48s ease-in-out infinite alternate;
+}
+
+.cloud-drift-mid {
+  animation: cloudFloatC 36s ease-in-out infinite alternate;
+}
+
+@keyframes cloudFloatA {
+  0% { transform: translate(155px, 130px); }
+  100% { transform: translate(225px, 134px); }
+}
+
+@keyframes cloudFloatB {
+  0% { transform: translate(915px, 255px); }
+  100% { transform: translate(845px, 251px); }
+}
+
+@keyframes cloudFloatC {
+  0% { transform: translate(560px, 175px); }
+  100% { transform: translate(615px, 178px); }
+}
+
+/* 高空飛機獨立巡航飛過天空（不與雲綁在一起） */
+.airplane-fly-group {
+  animation: airplaneCruise 46s linear infinite;
+}
+
+@keyframes airplaneCruise {
+  0% { transform: translateX(-180px) translateY(8px); }
+  50% { transform: translateX(720px) translateY(-4px); }
+  100% { transform: translateX(1620px) translateY(6px); }
+}
+
+/* 深咖啡色小車緩慢向前行駛 + 輕微引擎律動（路保持靜止） */
+.car-drive-group {
+  animation: carForward 28s linear infinite;
+}
+
+.car-bounce {
+  animation: carIdleBounce 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes carForward {
+  0% { transform: translateX(-220px); }
+  100% { transform: translateX(1580px); }
+}
+
+@keyframes carIdleBounce {
+  0% { transform: translateY(704px); }
+  100% { transform: translateY(702.2px); }
+}
+
+/* 柔和飄落的雪花粒子層 */
+.snow-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  top: -16px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.95), 0 1px 3px rgba(139, 159, 183, 0.35);
+  animation-name: snowFall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes snowFall {
+  0% {
+    transform: translate3d(0, -16px, 0);
+  }
+  50% {
+    transform: translate3d(20px, 50vh, 0);
+  }
+  100% {
+    transform: translate3d(-14px, 105vh, 0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   前景版面容器
+   -------------------------------------------------------------------------- */
+.page-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 32px 150px;
+}
+
+/* 頂部頁首 */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.site-title {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  color: var(--deep-coffee);
+}
+
+.sparkle {
+  color: var(--light-coffee);
+  font-size: 1.25rem;
+}
+
+.title-zh {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.title-en {
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #6b5b4f;
+  margin-left: 4px;
+}
+
+.header-rule {
+  width: 72px;
+  height: 1px;
+  background: rgba(155, 131, 112, 0.55);
+  margin-top: 8px;
+}
+
+.top-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-pill {
+  text-decoration: none;
+  background: var(--cream-card);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--deep-coffee);
+  border: 1px solid var(--line-hairline);
+  padding: 8px 17px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: all 0.22s ease;
+  box-shadow: 0 3px 10px var(--shadow-soft);
+}
+
+.nav-pill:hover {
+  background: var(--deep-coffee);
+  border-color: var(--deep-coffee);
+  color: var(--cream-white);
+  transform: translateY(-1px);
+}
+
+/* 麵包屑導覽 */
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--cream-card);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line-hairline);
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  margin-bottom: 26px;
+  color: var(--light-coffee);
+}
+
+.breadcrumb.hidden { display: none; }
+.breadcrumb a { color: var(--deep-coffee); text-decoration: none; font-weight: 500; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb .sep { color: #c4b7a6; }
+
+/* --------------------------------------------------------------------------
+   卡片右上角立體紅色圖釘 (.card-pushpin)
+   -------------------------------------------------------------------------- */
+.card-pushpin {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 32%, #f47a72 0%, #c83e37 62%, #8e241e 100%);
+  border: 1.5px solid #691915;
+  box-shadow: 0 4px 7px rgba(58, 30, 26, 0.28);
+  z-index: 4;
+  pointer-events: none;
+  transition: transform 0.22s ease;
+}
+
+/* 圖釘中心高光圓帽 */
+.card-pushpin::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffaba5 0%, #d9483f 85%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+}
+
+/* 圖釘斜下方細小針影 */
+.card-pushpin::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  right: 2px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(74, 59, 50, 0.24);
+  z-index: -1;
+}
+
+.journal-card:hover .card-pushpin {
+  transform: translateY(-2px) scale(1.06);
+}
+
+/* 第二、三層章節橫幅 */
+.section-banner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  background: var(--cream-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--line-hairline);
+  border-radius: 20px;
+  padding: 24px 30px;
+  margin-bottom: 32px;
+  box-shadow: 0 8px 24px var(--shadow-soft);
+}
+
+.section-banner h1 {
+  font-family: var(--font-serif);
+  font-size: 1.52rem;
+  font-weight: 700;
+  color: var(--deep-coffee);
+  margin-bottom: 4px;
+}
+
+.section-banner p {
+  font-size: 0.92rem;
+  color: #6b5b4f;
+}
+
+.back-btn {
+  text-decoration: none;
+  background: var(--oatmeal-light);
+  color: var(--deep-coffee);
+  border: 1px solid var(--line-hairline);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+  background: var(--deep-coffee);
+  border-color: var(--deep-coffee);
+  color: var(--cream-white);
+}
+
+/* --------------------------------------------------------------------------
+   卡片網格與質感旅行手帳卡片
+   -------------------------------------------------------------------------- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 28px;
+}
+
+.journal-card {
+  position: relative;
+  background: var(--cream-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--line-hairline);
+  border-radius: 20px;
+  padding: 28px 28px 26px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.24s ease, box-shadow 0.24s ease, background 0.24s ease, border-color 0.24s ease;
+  box-shadow: 0 8px 24px var(--shadow-soft);
+}
+
+.journal-card:hover {
+  transform: translateY(-4px);
+  background: rgba(253, 251, 246, 0.97);
+  border-color: var(--light-coffee);
+  box-shadow: 0 14px 32px var(--shadow-hover);
+}
+
+.card-meta-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.pill-badge {
+  display: inline-block;
+  background: var(--cream-blue-soft);
+  color: #455c72;
+  border: 1px solid rgba(151, 176, 200, 0.45);
+  font-size: 0.77rem;
+  font-weight: 500;
+  padding: 4px 14px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 1.38rem;
+  font-weight: 700;
+  color: var(--deep-coffee);
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.card-icon {
+  font-size: 1.25rem;
+}
+
+.card-en-sub {
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: var(--light-coffee);
+}
+
+.card-hairline {
+  width: 34px;
+  height: 1px;
+  background: var(--light-coffee);
+  opacity: 0.55;
+  margin: 14px 0 16px;
+}
+
+.card-desc {
+  font-size: 0.92rem;
+  color: #5d4e44;
+  margin-bottom: 22px;
+  flex: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.tag-chip {
+  background: var(--oatmeal-light);
+  color: #635347;
+  border: 1px solid var(--line-subtle);
+  font-size: 0.77rem;
+  font-weight: 400;
+  padding: 3px 12px;
+  border-radius: 999px;
+}
+
+.card-footer {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-subtle);
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: var(--deep-coffee);
+  color: var(--cream-white);
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 8px 20px;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.journal-card:hover .action-btn {
+  background: var(--deep-coffee-hover);
+}
+
+/* 待擴充優雅虛線卡 */
+.dashed-card {
+  position: relative;
+  background: rgba(253, 251, 246, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px dashed var(--light-coffee);
+  border-radius: 20px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 250px;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.dashed-card:hover {
+  background: rgba(253, 251, 246, 0.92);
+  border-color: var(--deep-coffee);
+}
+
+.dashed-card.full-span {
+  grid-column: 1 / -1;
+}
+
+.dashed-kicker {
+  font-family: var(--font-en);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  color: var(--light-coffee);
+  margin-bottom: 10px;
+}
+
+.dashed-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--deep-coffee);
+  font-size: 1.08rem;
+  margin-bottom: 8px;
+}
+
+.dashed-sub {
+  font-size: 0.84rem;
+  color: #78685c;
+}
+
+/* --------------------------------------------------------------------------
+   詳情閱讀紙張與常用日文情境快速索引列
+   -------------------------------------------------------------------------- */
+.detail-sheet {
+  position: relative;
+  background: var(--cream-card-solid);
+  border: 1px solid var(--line-hairline);
+  border-radius: 22px;
+  padding: 40px 48px;
+  box-shadow: 0 12px 36px var(--shadow-soft);
+}
+
+.detail-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.phrase-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 26px;
+  padding: 12px 14px;
+  background: var(--oatmeal-light);
+  border: 1px solid var(--line-subtle);
+  border-radius: 14px;
+}
+
+.phrase-jump-btn {
+  background: var(--cream-white);
+  color: var(--deep-coffee);
+  border: 1px solid var(--line-hairline);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.phrase-jump-btn:hover {
+  background: var(--deep-coffee);
+  border-color: var(--deep-coffee);
+  color: var(--cream-white);
+}
+
+.markdown-body h1 {
+  font-family: var(--font-serif);
+  font-size: 1.88rem;
+  font-weight: 700;
+  color: var(--deep-coffee);
+  margin-bottom: 18px;
+}
+
+.markdown-body h2 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--deep-coffee);
+  margin: 30px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line-subtle);
+  scroll-margin-top: 24px;
+}
+
+.markdown-body p {
+  margin-bottom: 16px;
+  color: #4f4138;
+}
+
+.markdown-body ul, .markdown-body ol {
+  margin: 0 0 18px 24px;
+  color: #4f4138;
+}
+
+.markdown-body li {
+  margin-bottom: 8px;
+}
+
+.markdown-body a {
+  color: #455c72;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid #97b0c8;
+  transition: background 0.15s;
+}
+
+.markdown-body a:hover {
+  background: var(--cream-blue-soft);
+}
+
+.markdown-body blockquote {
+  background: var(--oatmeal-light);
+  border-left: 3px solid var(--light-coffee);
+  padding: 14px 20px;
+  border-radius: 0 12px 12px 0;
+  margin: 20px 0;
+  color: #5c4d43;
+}
+
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 22px 0;
+  font-size: 0.91rem;
+}
+
+.markdown-body th, .markdown-body td {
+  border: 1px solid var(--line-hairline);
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.markdown-body th {
+  background: var(--oatmeal-light);
+  color: var(--deep-coffee);
+  font-weight: 600;
+}
+
+.markdown-body tr:hover td {
+  background: rgba(241, 236, 226, 0.45);
+}
+
+.markdown-body code {
+  background: var(--oatmeal-light);
+  color: var(--deep-coffee);
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 0.88em;
+}
+
+.loading-box {
+  background: var(--cream-card);
+  border: 1px solid var(--line-hairline);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  color: var(--light-coffee);
+  font-family: var(--font-serif);
+}
+
+/* 頁尾 */
+.site-footer {
+  margin-top: 64px;
+  text-align: center;
+  color: #6b5b4f;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+}
+
+.footer-rule {
+  width: 64px;
+  height: 1px;
+  background: rgba(155, 131, 112, 0.5);
+  margin: 0 auto 16px;
+}
+
+@media (max-width: 680px) {
+  .page-wrapper { padding: 28px 20px 120px; }
+  .detail-sheet { padding: 26px 20px; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .title-zh { font-size: 1.48rem; }
+}

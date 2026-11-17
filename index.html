@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日本旅遊探索庫 | Japan Travel Wiki</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+  <!-- 固定全螢幕雪國風景動態背景（雪會往下降、飛機獨立飛翔、蓬鬆白雲緩飄、車往前開、路保持靜止） -->
+  <div class="scenic-backdrop" aria-hidden="true">
+    <svg class="scenic-svg" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#b5c9de" />
+          <stop offset="52%" stop-color="#d5e1ee" />
+          <stop offset="82%" stop-color="#edf1f5" />
+          <stop offset="100%" stop-color="#f7f4ed" />
+        </linearGradient>
+        <linearGradient id="mountainGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#8b9fb7" />
+          <stop offset="100%" stop-color="#9cb0c6" />
+        </linearGradient>
+        <linearGradient id="snowGroundGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#fbfaf6" />
+          <stop offset="100%" stop-color="#f3efe6" />
+        </linearGradient>
+      </defs>
+
+      <!-- 奶油藍天空底色 -->
+      <rect width="1440" height="820" fill="url(#skyGrad)" />
+
+      <!-- 奶油白暖陽 -->
+      <circle cx="1175" cy="175" r="56" fill="#f5efd9" opacity="0.95" />
+
+      <!-- 蓬鬆雲朵 1（左上，獨立緩慢漂浮） -->
+      <g class="cloud-drift-slow" transform="translate(155, 130)">
+        <path d="M26,56 L176,56 C192,56 204,45 204,31 C204,18 193,7 180,7 C177,7 174,8 171,9 C165,-6 150,-16 133,-16 C118,-16 105,-8 98,4 C92,0 85,-2 77,-2 C59,-2 44,11 41,28 C37,26 32,25 26,25 C12,25 0,32 0,41 C0,49 12,56 26,56 Z" fill="#f9fbfd" opacity="0.9" />
+      </g>
+
+      <!-- 蓬鬆雲朵 2（中右，獨立緩慢漂浮） -->
+      <g class="cloud-drift-right" transform="translate(915, 255)">
+        <path d="M20,42 L138,42 C150,42 160,33 160,22 C160,12 152,4 142,4 C139,4 136,5 134,6 C129,-6 117,-14 103,-14 C91,-14 81,-7 75,2 C70,-1 64,-2 58,-2 C44,-2 33,8 31,21 C28,19 24,19 20,19 C9,19 0,24 0,31 C0,37 9,42 20,42 Z" fill="#f9fbfd" opacity="0.85" />
+      </g>
+
+      <!-- 蓬鬆雲朵 3（中左遠景，增加天空層次） -->
+      <g class="cloud-drift-mid" transform="translate(560, 175)">
+        <path d="M16,34 L110,34 C120,34 128,27 128,18 C128,10 121,3 113,3 C111,3 109,4 107,4 C103,-5 94,-11 83,-11 C73,-11 65,-6 60,2 C56,-1 51,-2 46,-2 C35,-2 26,6 25,17 C22,16 19,15 16,15 C7,15 0,19 0,25 C0,30 7,34 16,34 Z" fill="#f9fbfd" opacity="0.72" />
+      </g>
+
+      <!-- 獨立飛翔的高空白色飛機（不與雲朵綁定，自行平穩掠過天際） -->
+      <g class="airplane-fly-group">
+        <g transform="translate(0, 96) scale(0.88)">
+          <!-- 飛機尾跡雲（淡淡奶油白細線） -->
+          <line x1="-95" y1="25" x2="6" y2="25" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.55" />
+          <!-- 機身與機翼 -->
+          <path d="M12,24 L68,20 C88,18 106,19 114,23 C106,28 88,30 68,30 L12,28 Z" fill="#ffffff" />
+          <path d="M44,22 L24,2 L38,2 L64,21 Z" fill="#ffffff" />
+          <path d="M46,28 L28,44 L40,44 L62,28 Z" fill="#eef3f8" />
+          <path d="M14,24 L4,12 L13,12 L24,24 Z" fill="#ffffff" />
+        </g>
+      </g>
+
+      <!-- 遠景雙峰雪山 -->
+      <g class="mountains">
+        <polygon points="520,645 795,350 1070,645" fill="url(#mountainGrad)" />
+        <polygon points="795,350 726,455 768,438 795,465 828,442 868,458" fill="#ffffff" />
+        <polygon points="790,645 1025,400 1280,645" fill="#899eb7" />
+        <polygon points="1025,400 976,472 1005,458 1025,478 1048,460 1076,482" fill="#ffffff" />
+      </g>
+
+      <!-- 遠景白色雪丘 -->
+      <path d="M0,665 Q260,595 560,648 L560,720 L0,720 Z" fill="#eef3f7" />
+      <path d="M980,655 Q1220,605 1440,642 L1440,720 L980,720 Z" fill="#eef3f7" />
+
+      <!-- 左側電視塔剪影 -->
+      <g stroke="#8e7b6b" stroke-linecap="round" fill="none">
+        <line x1="205" y1="468" x2="205" y2="505" stroke-width="3.5" />
+        <rect x="193" y="505" width="24" height="14" rx="6" fill="#8e7b6b" stroke="none" />
+        <line x1="205" y1="519" x2="205" y2="638" stroke-width="2.5" />
+        <line x1="201" y1="519" x2="189" y2="638" stroke-width="3.2" />
+        <line x1="209" y1="519" x2="221" y2="638" stroke-width="3.2" />
+        <line x1="194" y1="588" x2="216" y2="588" stroke-width="2" />
+      </g>
+
+      <!-- 積雪路面基底 -->
+      <rect x="0" y="642" width="1440" height="108" fill="url(#snowGroundGrad)" />
+
+      <!-- 雪地松樹（左一、右二） -->
+      <g transform="translate(385, 582)">
+        <polygon points="24,0 6,34 42,34" fill="#739081" />
+        <polygon points="24,0 14,18 24,14 34,18" fill="#ffffff" />
+        <polygon points="24,22 2,64 46,64" fill="#739081" />
+        <polygon points="24,22 13,40 24,36 35,40" fill="#ffffff" />
+        <polygon points="24,48 -2,92 50,92" fill="#739081" />
+        <polygon points="24,48 12,66 24,62 36,66" fill="#ffffff" />
+      </g>
+
+      <g transform="translate(1095, 565)">
+        <polygon points="26,0 6,36 46,36" fill="#739081" />
+        <polygon points="26,0 15,20 26,15 37,20" fill="#ffffff" />
+        <polygon points="26,24 2,68 50,68" fill="#739081" />
+        <polygon points="26,24 14,44 26,39 38,44" fill="#ffffff" />
+        <polygon points="26,52 -2,98 54,98" fill="#739081" />
+        <polygon points="26,52 13,72 26,67 39,72" fill="#ffffff" />
+      </g>
+
+      <g transform="translate(1175, 586)">
+        <polygon points="22,0 5,32 39,32" fill="#739081" />
+        <polygon points="22,0 13,17 22,13 31,17" fill="#ffffff" />
+        <polygon points="22,20 2,58 42,58" fill="#739081" />
+        <polygon points="22,20 12,37 22,33 32,37" fill="#ffffff" />
+        <polygon points="22,44 -2,84 46,84" fill="#739081" />
+        <polygon points="22,44 11,61 22,57 33,61" fill="#ffffff" />
+      </g>
+
+      <!-- 燕麥淺咖公路（完全靜止） -->
+      <rect x="0" y="746" width="1440" height="46" fill="#d9ccb8" />
+      <rect x="0" y="792" width="1440" height="28" fill="#f7f4ed" />
+      <line x1="0" y1="769" x2="1440" y2="769" stroke="#faf8f3" stroke-width="3.5" stroke-dasharray="28 24" />
+
+      <!-- 往前行駛的深咖啡色旅途小車 -->
+      <g class="car-drive-group">
+        <g class="car-bounce">
+          <ellipse cx="82" cy="54" rx="74" ry="6" fill="rgba(74, 59, 50, 0.16)" />
+          <path d="M12,46 L12,32 C12,25 18,21 28,20 L46,6 C53,1 62,0 74,0 L102,0 C114,0 122,2 129,9 L142,21 C153,23 160,28 160,36 L160,46 C160,49 157,51 153,51 L19,51 C15,51 12,49 12,46 Z" fill="#6b5243" />
+          <path d="M49,7 L73,7 L73,21 L34,21 Z" fill="#cfd8e0" />
+          <path d="M79,7 L104,7 C111,7 116,9 121,14 L128,21 L79,21 Z" fill="#cfd8e0" />
+          <circle cx="43" cy="50" r="14" fill="#f7f4ed" />
+          <circle cx="127" cy="50" r="14" fill="#f7f4ed" />
+          <circle cx="43" cy="50" r="11.5" fill="#3a2c24" />
+          <circle cx="43" cy="50" r="4.5" fill="#a8988a" />
+          <circle cx="127" cy="50" r="11.5" fill="#3a2c24" />
+          <circle cx="127" cy="50" r="4.5" fill="#a8988a" />
+        </g>
+      </g>
+    </svg>
+
+    <!-- 柔和飄落的雪花粒子層 -->
+    <div id="snow-layer" class="snow-layer"></div>
+  </div>
+
+  <!-- 主前景閱讀容器 -->
+  <div class="page-wrapper">
+    <!-- 頂部頁首 -->
+    <header class="top-header">
+      <div class="header-brand">
+        <a href="#/" class="site-title">
+          <span class="sparkle">✦</span>
+          <span class="title-zh">日本旅遊探索庫</span>
+          <span class="title-en">Japan Travel Wiki</span>
+        </a>
+        <div class="header-rule"></div>
+      </div>
+      <nav class="top-actions" aria-label="主要導覽">
+        <a href="#/" class="nav-pill">🏠 城市首頁</a>
+        <a href="#/page/guides/convenience-stores.md" class="nav-pill">🏪 超商攻略</a>
+        <a href="#/page/guides/travel-phrases.md" class="nav-pill">🗣️ 常用日文</a>
+        <a href="#/page/overview.md" class="nav-pill">📖 行程總覽</a>
+        <a href="#/page/log.md" class="nav-pill">📜 編譯日誌</a>
+      </nav>
+    </header>
+
+    <!-- 麵包屑導覽 -->
+    <div id="breadcrumb" class="breadcrumb hidden"></div>
+
+    <!-- 動態內容主舞台 -->
+    <main id="app-root" class="main-container">
+      <div class="loading-box">正在載入日本旅遊探索庫…</div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-rule"></div>
+      <p>Japan Travel Wiki · Built with LLM Wiki Pattern &amp; <code>AGENTS.md</code></p>
+    </footer>
+  </div>
+
+  <script>
+    const EMBEDDED_CATALOG = {
+  "cities": [
+    {
+      "id": "tokyo",
+      "name": "東京",
+      "enName": "Tokyo",
+      "icon": "🗼",
+      "badge": "關東 · 都會核心",
+      "tapeColor": "blue",
+      "status": "ready",
+      "summary": "融合淺草下町風情、晴空塔與 SHIBUYA SKY 展望台、豐洲銀座星級美食的關東核心，已收錄 16 大主題情報。",
+      "tags": [
+        "5天4夜行程",
+        "淺草澀谷銀座",
+        "已收錄 16 篇"
+      ],
+      "spots": [
+        {
+          "id": "sensoji-kaminarimon",
+          "title": "淺草寺與雷門",
+          "badge": "江戶地標 · 和服體驗",
+          "tapeColor": "blue",
+          "summary": "東京最古老寺廟與巨大紅色雷門，沿仲見世通漫步品嚐傳統小吃並體驗和服租借。",
+          "tags": [
+            "台東區・淺草",
+            "仲見世通",
+            "和服街拍"
+          ],
+          "mdPath": "entries/sensoji-kaminarimon.md"
+        },
+        {
+          "id": "tokyo-skytree",
+          "title": "東京晴空塔 (Tokyo Skytree)",
+          "badge": "634m 地標 · 展望台",
+          "tapeColor": "pink",
+          "summary": "世界第二高建築，登上 350m 天望甲板與 450m 天望回廊 360 度俯瞰東京與富士山。",
+          "tags": [
+            "墨田區・押上",
+            "360度全景",
+            "Solamachi商場"
+          ],
+          "mdPath": "entries/tokyo-skytree.md"
+        },
+        {
+          "id": "shibuya-sky",
+          "title": "SHIBUYA SKY 澀谷展望台",
+          "badge": "露天頂樓 · 網美打卡",
+          "tapeColor": "blue",
+          "summary": "澀谷車站上方完全開放式屋頂展望台，無欄杆阻擋俯瞰澀谷十字路口人潮與夕陽夜景。",
+          "tags": [
+            "澀谷站直結",
+            "露天高空",
+            "日落夜景"
+          ],
+          "mdPath": "entries/shibuya-sky.md"
+        },
+        {
+          "id": "meiji-jingu",
+          "title": "明治神宮 (Meiji Jingu)",
+          "badge": "森林神社 · 文化遺產",
+          "tapeColor": "pink",
+          "summary": "代代木公園旁東京最大神社，穿過巨大鳥居與綠蔭碎石參道，常見傳統神前婚禮隊伍。",
+          "tags": [
+            "原宿・代代木",
+            "神前婚禮",
+            "森林參道"
+          ],
+          "mdPath": "entries/meiji-jingu.md"
+        },
+        {
+          "id": "teamlab-planets",
+          "title": "teamLab Planets TOKYO",
+          "badge": "沉浸式藝術 · 預約制",
+          "tapeColor": "blue",
+          "summary": "豐洲超人氣光影與水面互動藝術美術館，赤腳涉水穿梭於漂浮花海與夢幻光影之間。",
+          "tags": [
+            "江東區・豐洲",
+            "赤腳涉水",
+            "提早1個月預約"
+          ],
+          "mdPath": "entries/teamlab-planets.md"
+        },
+        {
+          "id": "tokyo-tower",
+          "title": "東京鐵塔 (Tokyo Tower)",
+          "badge": "經典地標 · 浪漫點燈",
+          "tapeColor": "pink",
+          "summary": "登上 150m 與 250m 展望台俯瞰市區，夜晚亮起溫暖橘黃燈光，塔下芝公園適合野餐賞櫻。",
+          "tags": [
+            "港區・芝公園",
+            "經典夜景",
+            "春季賞櫻"
+          ],
+          "mdPath": "entries/tokyo-tower.md"
+        },
+        {
+          "id": "roppongi-city-view",
+          "title": "六本木之丘展望台 (東京 City View)",
+          "badge": "52樓室內 · 雙塔同框",
+          "tapeColor": "blue",
+          "summary": "森大廈 52 樓挑高落地窗展望台，晴天可同時拍到東京鐵塔與晴空塔，拍攝東京鐵塔視角極佳。",
+          "tags": [
+            "港區・六本木",
+            "正對東京鐵塔",
+            "雨天備案"
+          ],
+          "mdPath": "entries/roppongi-city-view.md"
+        },
+        {
+          "id": "ueno-park-zoo",
+          "title": "上野恩賜公園與上野動物園",
+          "badge": "親子動物園 · 賞櫻名所",
+          "tapeColor": "pink",
+          "summary": "集結上野動物園大貓熊、美術館與博物館，春季為東京數一數二的賞櫻名所，週一休園。",
+          "tags": [
+            "台東區・上野",
+            "親子必去",
+            "大貓熊"
+          ],
+          "mdPath": "entries/ueno-park-zoo.md"
+        },
+        {
+          "id": "odaiba-rainbow-bridge",
+          "title": "台場海濱公園與彩虹大橋",
+          "badge": "海濱夜景 · 跨海步道",
+          "tapeColor": "blue",
+          "summary": "沙灘公園近距離欣賞彩虹大橋浪漫點燈，天氣好時可沿彩虹大橋人行步道步行橫越東京灣。",
+          "tags": [
+            "港區・台場",
+            "彩虹大橋",
+            "東京灣夜景"
+          ],
+          "mdPath": "entries/odaiba-rainbow-bridge.md"
+        }
+      ],
+      "food": [
+        {
+          "id": "sushi-dai-toyosu",
+          "title": "壽司大 (豐洲市場排隊名店)",
+          "badge": "清晨排隊 · 江戶前壽司",
+          "tapeColor": "pink",
+          "summary": "豐洲市場 6 街區頂級握壽司名店，主廚套餐約 10–12 貫現撈漁獲（鮪魚中腹、海膽、星鰻）。",
+          "tags": [
+            "¥4,000–6,000",
+            "豐洲市場",
+            "05:30營業"
+          ],
+          "mdPath": "entries/sushi-dai-toyosu.md"
+        },
+        {
+          "id": "izuei-ueno-unagi",
+          "title": "伊豆榮 (上野百年鰻魚飯老店)",
+          "badge": "1910創業 · 關東鰻魚飯",
+          "tapeColor": "blue",
+          "summary": "上野公園旁百年老舖，先蒸後烤的關東式做法使鰻魚軟嫩酥香，推薦招牌三層「うな重」。",
+          "tags": [
+            "¥3,500–6,000",
+            "上野公園旁",
+            "百年老店"
+          ],
+          "mdPath": "entries/izuei-ueno-unagi.md"
+        },
+        {
+          "id": "sushi-yamaken-ginza",
+          "title": "鮨 YAMAKEN (銀座黑鮪魚吃到飽)",
+          "badge": "90分鐘放題 · 預約制",
+          "tapeColor": "pink",
+          "summary": "銀座罕見黑鮪魚（本マグロ）大腹、中腹、赤身及海膽鮭魚卵握壽司 90 分鐘無限享用。",
+          "tags": [
+            "午餐¥8,800起",
+            "中央區・銀座",
+            "提早1-2週訂位"
+          ],
+          "mdPath": "entries/sushi-yamaken-ginza.md"
+        },
+        {
+          "id": "ginza-enzo-yakiniku",
+          "title": "銀座炎藏 (A5 黑毛和牛燒肉)",
+          "badge": "半包廂 · 專人代烤",
+          "tapeColor": "blue",
+          "summary": "選用油花均勻的 A5 等級黑毛和牛，半包廂優雅空間搭配專人代烤，推薦特選和牛與厚切牛舌。",
+          "tags": [
+            "¥10,000–20,000",
+            "銀座8丁目",
+            "A5黑毛和牛"
+          ],
+          "mdPath": "entries/ginza-enzo-yakiniku.md"
+        },
+        {
+          "id": "manten-sushi-nihonbashi",
+          "title": "Manten鮨 日本橋 (頂級 Omakase)",
+          "badge": "板前無菜單 · 職人饗宴",
+          "tapeColor": "pink",
+          "summary": "依當日最新鮮時令食材設計的板前 Omakase 套餐，從前菜、刺身到炙燒握壽司充滿驚喜。",
+          "tags": [
+            "午餐¥15,000起",
+            "日本橋室町",
+            "板前Omakase"
+          ],
+          "mdPath": "entries/manten-sushi-nihonbashi.md"
+        }
+      ],
+      "souvenirs": [
+        {
+          "id": "tokyo-station-souvenirs",
+          "title": "東京車站伴手禮與購物指南",
+          "badge": "交通樞紐 · 一站購足",
+          "tapeColor": "blue",
+          "summary": "新幹線與機場快線交會樞紐，行程最後一天可於站內商店街一次購足東京限定伴手禮盒。",
+          "tags": [
+            "東京車站",
+            "東京限定禮盒",
+            "搭機前採買"
+          ],
+          "mdPath": "entries/tokyo-station-souvenirs.md"
+        },
+        {
+          "id": "ginza-shopping",
+          "title": "銀座精品街與 Ginza Sony Park",
+          "badge": "精品旗艦 · 百貨專櫃",
+          "tapeColor": "pink",
+          "summary": "國際精品與老字號百貨林立，適合採購高品質和洋菓子禮盒，並順遊新開幕 Ginza Sony Park。",
+          "tags": [
+            "中央區・銀座",
+            "老字號百貨",
+            "2025新地標"
+          ],
+          "mdPath": "entries/ginza-shopping.md"
+        },
+        {
+          "id": "sensoji-kaminarimon",
+          "title": "淺草仲見世通傳統和菓子",
+          "badge": "江戶老舖 · 傳統點心",
+          "tapeColor": "blue",
+          "summary": "雷門通往淺草寺的歷史商店街，販售日式傳統和菓子、人形燒仙貝與江戶風紀念品。",
+          "tags": [
+            "淺草仲見世通",
+            "日式和菓子",
+            "江戶紀念品"
+          ],
+          "mdPath": "entries/sensoji-kaminarimon.md"
+        },
+        {
+          "id": "tokyo-skytree",
+          "title": "晴空塔 Solamachi 限定紀念品",
+          "badge": "300間店鋪 · 塔內商場",
+          "tapeColor": "pink",
+          "summary": "晴空塔下東京 Solamachi 購物中心匯集超過 300 間店鋪，可購買晴空塔限定造型伴手禮。",
+          "tags": [
+            "押上・晴空塔",
+            "晴空塔限定",
+            "300間店鋪"
+          ],
+          "mdPath": "entries/tokyo-skytree.md"
+        }
+      ]
+    },
+    {
+      "id": "osaka",
+      "name": "大阪",
+      "enName": "Osaka",
+      "icon": "🐙",
+      "badge": "關西 · 天下廚房",
+      "tapeColor": "pink",
+      "status": "ready",
+      "summary": "兼具道頓堀心齋橋購物、環球影城樂園與高密度美食的關西起點，已收錄 7 大主題情報。",
+      "tags": [
+        "3～7 天行程",
+        "道頓堀梅田",
+        "已收錄 7 篇"
+      ],
+      "spots": [
+        {
+          "id": "dotonbori-shinsaibashi",
+          "title": "道頓堀＋心齋橋商圈",
+          "badge": "必拍地標 · 購物",
+          "tapeColor": "blue",
+          "summary": "走過道頓堀橋即可看見著名固力果跑跑人招牌，周邊聚集藥妝、百貨與各式餐廳。",
+          "tags": [
+            "半天～晚上",
+            "固力果招牌",
+            "難波心齋橋"
+          ],
+          "mdPath": "entries/dotonbori-shinsaibashi.md"
+        },
+        {
+          "id": "universal-studios-japan",
+          "title": "大阪環球影城 (USJ)",
+          "badge": "主題樂園 · 全日",
+          "tapeColor": "pink",
+          "summary": "擁有超級任天堂世界、哈利波特魔法世界與小小兵樂園，親子與朋友出遊首選。",
+          "tags": [
+            "一整天",
+            "任天堂世界",
+            "此花區"
+          ],
+          "mdPath": "entries/universal-studios-japan.md"
+        },
+        {
+          "id": "osaka-castle",
+          "title": "大阪城 (Osaka Castle)",
+          "badge": "歷史古蹟 · 賞櫻",
+          "tapeColor": "blue",
+          "summary": "大阪最具代表性的歷史文化地標，天守閣與護城河景觀四季皆美，春季為賞櫻名所。",
+          "tags": [
+            "2～3 小時",
+            "天守閣",
+            "中央區"
+          ],
+          "mdPath": "entries/osaka-castle.md"
+        },
+        {
+          "id": "abeno-harukas",
+          "title": "阿倍野 HARUKAS 展望台",
+          "badge": "高空景觀 · 夜景",
+          "tapeColor": "pink",
+          "summary": "高樓觀景台無死角俯瞰大阪市區輪廓，推薦下午至傍晚登樓一次收集夕陽與夜景。",
+          "tags": [
+            "1～2 小時",
+            "百萬夜景",
+            "天王寺區"
+          ],
+          "mdPath": "entries/abeno-harukas.md"
+        },
+        {
+          "id": "tsutenkaku-shinsekai",
+          "title": "通天閣與新世界商圈",
+          "badge": "昭和懷舊 · 夜景",
+          "tapeColor": "blue",
+          "summary": "充滿復古立體招牌與霓虹燈的懷舊街區，登塔賞景後可順道品嚐發源於此的串炸。",
+          "tags": [
+            "2～3 小時",
+            "霓虹街拍",
+            "浪速區"
+          ],
+          "mdPath": "entries/tsutenkaku-shinsekai.md"
+        }
+      ],
+      "food": [
+        {
+          "id": "onigiri-gorichan",
+          "title": "おにぎりごりちゃん 手作飯糰",
+          "badge": "梅田排隊名店",
+          "tapeColor": "pink",
+          "summary": "中崎町超人氣現捏飯糰專門店，必點蛋黃醬油漬＋肉鬆，吃到一半可免費加高湯變茶泡飯。",
+          "tags": [
+            "茶泡飯二吃",
+            "蛋黃肉鬆",
+            "梅田・中崎町"
+          ],
+          "mdPath": "entries/onigiri-gorichan.md"
+        },
+        {
+          "id": "kuromon-market",
+          "title": "黑門市場海鮮小吃",
+          "badge": "大阪人的廚房",
+          "tapeColor": "blue",
+          "summary": "長約 580 公尺的拱廊市場，聚集現烤大干貝、生魚片、海鮮串燒與現榨果汁，雨天也能逛。",
+          "tags": [
+            "1～2 小時",
+            "現烤海鮮",
+            "日本橋・難波"
+          ],
+          "mdPath": "entries/kuromon-market.md"
+        },
+        {
+          "id": "dotonbori-shinsaibashi",
+          "title": "道頓堀章魚燒＆大阪燒",
+          "badge": "關西靈魂小吃",
+          "tapeColor": "pink",
+          "summary": "外酥內軟的現烤章魚燒、濃厚醬汁大阪燒與拉麵名店一級戰區，宵夜時段依然熱鬧。",
+          "tags": [
+            "章魚燒",
+            "大阪燒",
+            "道頓堀・難波"
+          ],
+          "mdPath": "entries/dotonbori-shinsaibashi.md"
+        },
+        {
+          "id": "tsutenkaku-shinsekai",
+          "title": "新世界元祖串炸 (串カツ)",
+          "badge": "通天閣名物",
+          "tapeColor": "blue",
+          "summary": "將肉類、海鮮與時蔬裹粉炸至金黃酥脆，搭配特製秘傳醬汁享用的大阪庶民美食。",
+          "tags": [
+            "串炸名物",
+            "晚餐宵夜",
+            "新世界商圈"
+          ],
+          "mdPath": "entries/tsutenkaku-shinsekai.md"
+        }
+      ],
+      "souvenirs": [
+        {
+          "id": "kuromon-market",
+          "title": "黑門市場和菓子與西洋糕點",
+          "badge": "傳統老舖點心",
+          "tapeColor": "blue",
+          "summary": "黑門市場拱廊兩側除了海鮮外，亦有多間老字號和菓子與西洋糕點鋪，適合挑選日系禮盒。",
+          "tags": [
+            "和菓子",
+            "西洋糕點",
+            "黑門市場"
+          ],
+          "mdPath": "entries/kuromon-market.md"
+        },
+        {
+          "id": "universal-studios-japan",
+          "title": "USJ 主題園區限定禮盒周邊",
+          "badge": "樂園限定紀念品",
+          "tapeColor": "pink",
+          "summary": "超級任天堂世界、哈利波特與小小兵商店限定販售的造型餅乾鐵盒、爆米花桶與角色周邊。",
+          "tags": [
+            "瑪利歐周邊",
+            "哈利波特",
+            "環球影城"
+          ],
+          "mdPath": "entries/universal-studios-japan.md"
+        },
+        {
+          "id": "dotonbori-shinsaibashi",
+          "title": "心齋橋藥妝與百貨專櫃伴手禮",
+          "badge": "一站式免稅採買",
+          "tapeColor": "blue",
+          "summary": "心齋橋筋商店街與周邊百貨聚集大型藥妝與美妝食品專櫃，適合回國前一次購足伴手禮。",
+          "tags": [
+            "藥妝採買",
+            "百貨禮盒",
+            "心齋橋"
+          ],
+          "mdPath": "entries/dotonbori-shinsaibashi.md"
+        }
+      ]
+    },
+    {
+      "id": "nagoya",
+      "name": "名古屋",
+      "enName": "Nagoya",
+      "icon": "🏯",
+      "badge": "中部 · 味噌美食之都",
+      "tapeColor": "blue",
+      "status": "coming_soon",
+      "summary": "前往白川鄉合掌村與北陸的重要樞紐，鰻魚飯三吃與味噌豬排攻略陸續加入中。",
+      "tags": [
+        "鰻魚飯三吃",
+        "吉卜力公園",
+        "蝦餅伴手禮"
+      ],
+      "spots": [],
+      "food": [],
+      "souvenirs": []
+    },
+    {
+      "id": "hokkaido",
+      "name": "北海道",
+      "enName": "Hokkaido",
+      "icon": "❄️",
+      "badge": "北國 · 自然與甜點王國",
+      "tapeColor": "pink",
+      "status": "coming_soon",
+      "summary": "札幌湯咖哩、小樽運河浪漫雪景與六花亭、LeTAO 等乳製品甜點伴手禮陸續加入中。",
+      "tags": [
+        "札幌小樽",
+        "海鮮湯咖哩",
+        "白色戀人"
+      ],
+      "spots": [],
+      "food": [],
+      "souvenirs": []
+    }
+  ]
+};
+
+    // 1. 生成全畫面柔和飄落的雪花
+    (function initSnowfall() {
+      const container = document.getElementById('snow-layer');
+      if (!container) return;
+      const flakeCount = 55;
+      for (let i = 0; i < flakeCount; i++) {
+        const flake = document.createElement('span');
+        flake.className = 'snowflake';
+        const size = (Math.random() * 5 + 4).toFixed(1);
+        const left = (Math.random() * 100).toFixed(2);
+        const duration = (Math.random() * 10 + 9).toFixed(1);
+        const delay = (-Math.random() * 20).toFixed(1);
+        const opacity = (Math.random() * 0.35 + 0.6).toFixed(2);
+
+        flake.style.width = `${size}px`;
+        flake.style.height = `${size}px`;
+        flake.style.left = `${left}%`;
+        flake.style.opacity = opacity;
+        flake.style.animationDuration = `${duration}s`;
+        flake.style.animationDelay = `${delay}s`;
+        container.appendChild(flake);
+      }
+    })();
+
+    const EMBEDDED_PAGES = {};
+    let catalogData = null;
+
+    async function loadCatalog() {
+      if (catalogData) return catalogData;
+      try {
+        const res = await fetch('wiki/catalog.json');
+        if (!res.ok) throw new Error('HTTP error');
+        catalogData = await res.json();
+      } catch (e) {
+        catalogData = EMBEDDED_CATALOG;
+      }
+      return catalogData;
+    }
+
+    async function loadMarkdownText(mdPath) {
+      try {
+        const res = await fetch(`wiki/${mdPath}`);
+        if (!res.ok) throw new Error('HTTP error');
+        return await res.text();
+      } catch (e) {
+        if (EMBEDDED_PAGES[mdPath]) return EMBEDDED_PAGES[mdPath];
+        throw e;
+      }
+    }
+
+    function parseFrontmatter(text) {
+      const normalized = text.replace(/\r\n/g, '\n');
+      const match = normalized.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+      if (!match) return { meta: null, content: normalized };
+      const metaLines = match[1].split('\n');
+      const meta = {};
+      metaLines.forEach(line => {
+        const idx = line.indexOf(':');
+        if (idx > -1) {
+          meta[line.slice(0, idx).trim()] = line.slice(idx + 1).trim();
+        }
+      });
+      return { meta, content: match[2] };
+    }
+
+    // 卡片元件（右上角附立體紅色大頭圖釘 .card-pushpin）
+    function renderCardHTML({ badge, icon = '', title, enSubtitle = '', summary, tags = [], buttonText = '進入 →', href }) {
+      const chipsHTML = tags.map(t => `<span class="tag-chip">${t}</span>`).join('');
+      return `
+        <article class="journal-card" onclick="location.hash='${href}'">
+          <span class="card-pushpin" aria-hidden="true"></span>
+          <div class="card-meta-row">
+            <span class="pill-badge">${badge}</span>
+          </div>
+          <h2 class="card-title">
+            ${icon ? `<span class="card-icon">${icon}</span>` : ''}
+            <span>${title}</span>
+            ${enSubtitle ? `<span class="card-en-sub">${enSubtitle}</span>` : ''}
+          </h2>
+          <div class="card-hairline"></div>
+          <p class="card-desc">${summary}</p>
+          <div class="card-tags">${chipsHTML}</div>
+          <div class="card-footer">
+            <a href="${href}" class="action-btn" onclick="event.stopPropagation()">${buttonText}</a>
+          </div>
+        </article>
+      `;
+    }
+
+    // 視圖 1：首頁（四大城市卡片 ＋ 擴充虛線卡，每張右上角皆有紅色圖釘）
+    async function renderHomeView() {
+      const data = await loadCatalog();
+      document.getElementById('breadcrumb').classList.add('hidden');
+
+      const cardsHTML = data.cities.map(city => renderCardHTML({
+        badge: city.badge,
+        icon: city.icon,
+        title: city.name,
+        enSubtitle: city.enName,
+        summary: city.summary,
+        tags: city.tags,
+        buttonText: city.status === 'ready' ? '探索城市 →' : '查看分類 →',
+        href: `#/city/${city.id}`
+      })).join('');
+
+      document.getElementById('app-root').innerHTML = `
+        <section class="cards-grid">
+          ${cardsHTML}
+          <article class="dashed-card" onclick="location.hash='#/page/log.md'">
+            <span class="card-pushpin" aria-hidden="true"></span>
+            <span class="dashed-kicker">NEXT CHAPTER</span>
+            <p class="dashed-title">更多日本城市，陸續加入中...</p>
+            <p class="dashed-sub">丟入新攻略至 <code>raw/</code> 即可自動擴充</p>
+          </article>
+        </section>
+      `;
+    }
+
+    // 視圖 2：城市內頁（必去景點 / 在地美食 / 必買伴手禮）
+    async function renderCityView(cityId) {
+      const data = await loadCatalog();
+      const city = data.cities.find(c => c.id === cityId);
+      if (!city) return renderHomeView();
+
+      const bc = document.getElementById('breadcrumb');
+      bc.classList.remove('hidden');
+      bc.innerHTML = `<a href="#/">🏠 城市首頁</a> <span class="sep">/</span> <strong>${city.icon} ${city.name} ${city.enName}</strong>`;
+
+      const categories = [
+        {
+          key: 'spots',
+          icon: '🏯',
+          name: '必去景點',
+          badge: `${city.name} · 景點探索`,
+          items: city.spots,
+          fallbackDesc: `精選${city.name}代表性地標、高空展望台與歷史文化散步路線。`
+        },
+        {
+          key: 'food',
+          icon: '🍜',
+          name: '在地美食',
+          badge: `${city.name} · 美食地圖`,
+          items: city.food,
+          fallbackDesc: `網羅${city.name}排隊名店、傳統市場海鮮與道地庶民料理。`
+        },
+        {
+          key: 'souvenirs',
+          icon: '🎁',
+          name: '必買伴手禮',
+          badge: `${city.name} · 購物清單`,
+          items: city.souvenirs,
+          fallbackDesc: `彙整${city.name}老舖和菓子、限定周邊與免稅採買據點。`
+        }
+      ];
+
+      const catCardsHTML = categories.map(cat => {
+        const count = cat.items.length;
+        const previewTags = count > 0
+          ? cat.items.slice(0, 3).map(i => i.title.split(' ')[0])
+          : ['攻略整理中', '0 篇收錄'];
+        const desc = count > 0
+          ? `已收錄 ${count} 則${city.name}${cat.name}情報，點擊展開完整卡片清單與順遊動線。`
+          : cat.fallbackDesc;
+
+        return renderCardHTML({
+          badge: cat.badge,
+          icon: cat.icon,
+          title: `${cat.name}（${count}）`,
+          summary: desc,
+          tags: previewTags,
+          buttonText: count > 0 ? '瀏覽清單 →' : '查看狀態 →',
+          href: `#/city/${city.id}/${cat.key}`
+        });
+      }).join('');
+
+      document.getElementById('app-root').innerHTML = `
+        <div class="section-banner">
+          <span class="card-pushpin" aria-hidden="true"></span>
+          <div>
+            <h1>${city.icon} ${city.name} ${city.enName} 探索分類</h1>
+            <p>${city.summary}</p>
+          </div>
+          <a href="#/" class="back-btn">← 返回城市首頁</a>
+        </div>
+        <section class="cards-grid">
+          ${catCardsHTML}
+        </section>
+      `;
+    }
+
+    // 視圖 3：特定城市的「景點 / 美食 / 伴手禮」卡片清單頁
+    async function renderCategoryListView(cityId, catKey) {
+      const data = await loadCatalog();
+      const city = data.cities.find(c => c.id === cityId);
+      if (!city) return renderHomeView();
+
+      const catMeta = {
+        spots: { icon: '🏯', label: '必去景點' },
+        food: { icon: '🍜', label: '在地美食' },
+        souvenirs: { icon: '🎁', label: '必買伴手禮' }
+      }[catKey] || { icon: '📌', label: catKey };
+
+      const items = city[catKey] || [];
+      const bc = document.getElementById('breadcrumb');
+      bc.classList.remove('hidden');
+      bc.innerHTML = `
+        <a href="#/">🏠 城市首頁</a> <span class="sep">/</span>
+        <a href="#/city/${city.id}">${city.icon} ${city.name}</a> <span class="sep">/</span>
+        <strong>${catMeta.icon} ${catMeta.label}</strong>
+      `;
+
+      let gridContent = '';
+      if (items.length === 0) {
+        gridContent = `
+          <article class="dashed-card full-span" onclick="location.hash='#/city/${city.id}'">
+            <span class="card-pushpin" aria-hidden="true"></span>
+            <span class="dashed-kicker">COMING SOON</span>
+            <p class="dashed-title">${city.name}「${catMeta.label}」攻略整理中，陸續加入…</p>
+            <p class="dashed-sub">將${city.name}旅遊筆記放入 <code>raw/</code> 並執行 Ingest，系統將自動為您編排成卡片。</p>
+          </article>
+        `;
+      } else {
+        gridContent = items.map(item => renderCardHTML({
+          badge: item.badge,
+          title: item.title,
+          summary: item.summary,
+          tags: item.tags,
+          buttonText: '閱讀詳情 →',
+          href: `#/page/${item.mdPath}?fromCity=${city.id}&fromCat=${catKey}`
+        })).join('');
+      }
+
+      document.getElementById('app-root').innerHTML = `
+        <div class="section-banner">
+          <span class="card-pushpin" aria-hidden="true"></span>
+          <div>
+            <h1>${catMeta.icon} ${city.name} · ${catMeta.label}</h1>
+            <p>點擊任一張卡片，閱讀由原始旅遊筆記編譯的完整情報與順遊建議。</p>
+          </div>
+          <a href="#/city/${city.id}" class="back-btn">← 返回${city.name}分類</a>
+        </div>
+        <section class="cards-grid">
+          ${gridContent}
+        </section>
+      `;
+    }
+
+    // 視圖 4：Markdown 實體詳情頁 / 攻略頁 / 常用日文 / 日誌頁
+    async function renderMarkdownPageView(mdPath, queryString = '') {
+      const params = new URLSearchParams(queryString);
+      const fromCity = params.get('fromCity');
+      const fromCat = params.get('fromCat');
+
+      let backHref = '#/';
+      let backLabel = '← 返回城市首頁';
+      if (fromCity && fromCat) {
+        backHref = `#/city/${fromCity}/${fromCat}`;
+        backLabel = '← 返回分類清單';
+      } else if (fromCity) {
+        backHref = `#/city/${fromCity}`;
+        backLabel = '← 返回城市分類';
+      }
+
+      const isPhrasebook = mdPath === 'guides/travel-phrases.md';
+      const pageCrumb = isPhrasebook ? '🗣️ 常用日文' : '詳細攻略';
+
+      const bc = document.getElementById('breadcrumb');
+      bc.classList.remove('hidden');
+      bc.innerHTML = `<a href="#/">🏠 城市首頁</a> <span class="sep">/</span> <a href="${backHref}">${backLabel.replace('← ', '')}</a> <span class="sep">/</span> <strong>${pageCrumb}</strong>`;
+
+      try {
+        const rawText = await loadMarkdownText(mdPath);
+        const { meta, content } = parseFrontmatter(rawText);
+
+        const metaHTML = meta ? `
+          <div class="detail-meta">
+            <span class="pill-badge">${meta.category || 'wiki'}</span>
+            ${meta.city ? `<span class="tag-chip">${meta.city.toUpperCase()}</span>` : ''}
+            ${meta.tags ? `<span class="tag-chip">${meta.tags}</span>` : ''}
+            ${meta.last_updated ? `<span class="tag-chip">更新於 ${meta.last_updated}</span>` : ''}
+          </div>
+        ` : '';
+
+        // 若是常用日文手冊，提供快速情境跳轉列，方便旅途中單手切換
+        const quickNavHTML = isPhrasebook ? `
+          <div class="phrase-filter-bar" aria-label="日文情境快速索引">
+            <button type="button" class="phrase-jump-btn" onclick="scrollToHeading(0)">1. 招呼問候</button>
+            <button type="button" class="phrase-jump-btn" onclick="scrollToHeading(1)">2. 迷路問路</button>
+            <button type="button" class="phrase-jump-btn" onclick="scrollToHeading(2)">3. 飯店住宿</button>
+            <button type="button" class="phrase-jump-btn" onclick="scrollToHeading(3)">4. 餐廳點餐</button>
+            <button type="button" class="phrase-jump-btn" onclick="scrollToHeading(4)">5. 車站電車</button>
+            <button type="button" class="phrase-jump-btn" onclick="scrollToHeading(5)">6. 觀光拍照</button>
+            <button type="button" class="phrase-jump-btn" onclick="scrollToHeading(6)">7. 商店購物</button>
+          </div>
+        ` : '';
+
+        document.getElementById('app-root').innerHTML = `
+          <div class="detail-sheet">
+            <span class="card-pushpin" aria-hidden="true"></span>
+            <div class="detail-topbar">
+              ${metaHTML}
+              <a href="${backHref}" class="back-btn">${backLabel}</a>
+            </div>
+            ${quickNavHTML}
+            <article id="md-body" class="markdown-body">${marked.parse(content)}</article>
+          </div>
+        `;
+
+        const mdBody = document.getElementById('md-body');
+        if (window.renderMathInElement) {
+          renderMathInElement(mdBody, {
+            delimiters: [
+              { left: '$$', right: '$$', display: true },
+              { left: '$', right: '$', display: false }
+            ],
+            throwOnError: false
+          });
+        }
+
+        mdBody.querySelectorAll('a').forEach(a => {
+          const href = a.getAttribute('href');
+          if (!href) return;
+          if (href.startsWith('http://') || href.startsWith('https://')) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          } else if (href.endsWith('.md')) {
+            a.addEventListener('click', (e) => {
+              e.preventDefault();
+              const baseParts = mdPath.split('/');
+              baseParts.pop();
+              href.split('/').forEach(p => {
+                if (p === '..') baseParts.pop();
+                else if (p !== '.' && p !== '') baseParts.push(p);
+              });
+              const resolved = baseParts.join('/');
+              if (resolved.startsWith('cities/')) {
+                const cid = resolved.replace('cities/', '').replace('.md', '');
+                location.hash = `#/city/${cid}`;
+              } else {
+                location.hash = `#/page/${resolved}`;
+              }
+            });
+          }
+        });
+      } catch (err) {
+        document.getElementById('app-root').innerHTML = `
+          <div class="detail-sheet">
+            <span class="card-pushpin" aria-hidden="true"></span>
+            <p>無法載入 <code>wiki/${mdPath}</code>，請確認檔案路徑是否正確。</p>
+            <a href="#/" class="back-btn">← 返回首頁</a>
+          </div>
+        `;
+      }
+    }
+
+    function scrollToHeading(index) {
+      const headings = document.querySelectorAll('#md-body h2');
+      if (headings[index]) {
+        headings[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    async function router() {
+      const rawHash = location.hash.replace(/^#/, '') || '/';
+      const [pathPart, queryPart] = rawHash.split('?');
+      const segments = pathPart.split('/').filter(Boolean);
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (segments.length === 0) {
+        await renderHomeView();
+      } else if (segments[0] === 'city' && segments.length === 2) {
+        await renderCityView(segments[1]);
+      } else if (segments[0] === 'city' && segments.length === 3) {
+        await renderCategoryListView(segments[1], segments[2]);
+      } else if (segments[0] === 'page' && segments.length >= 2) {
+        const mdPath = segments.slice(1).join('/');
+        await renderMarkdownPageView(mdPath, queryPart || '');
+      } else {
+        await renderHomeView();
+      }
+    }
+
+    window.addEventListener('hashchange', router);
+    window.addEventListener('DOMContentLoaded', router);
+  </script>
+</body>
+</html>

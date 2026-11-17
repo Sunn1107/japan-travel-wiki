@@ -1,0 +1,472 @@
+{
+  "cities": [
+    {
+      "id": "tokyo",
+      "name": "東京",
+      "enName": "Tokyo",
+      "icon": "🗼",
+      "badge": "關東 · 都會核心",
+      "tapeColor": "blue",
+      "status": "ready",
+      "summary": "融合淺草下町風情、晴空塔與 SHIBUYA SKY 展望台、豐洲銀座星級美食的關東核心，已收錄 16 大主題情報。",
+      "tags": [
+        "5天4夜行程",
+        "淺草澀谷銀座",
+        "已收錄 16 篇"
+      ],
+      "spots": [
+        {
+          "id": "sensoji-kaminarimon",
+          "title": "淺草寺與雷門",
+          "badge": "江戶地標 · 和服體驗",
+          "tapeColor": "blue",
+          "summary": "東京最古老寺廟與巨大紅色雷門，沿仲見世通漫步品嚐傳統小吃並體驗和服租借。",
+          "tags": [
+            "台東區・淺草",
+            "仲見世通",
+            "和服街拍"
+          ],
+          "mdPath": "entries/sensoji-kaminarimon.md"
+        },
+        {
+          "id": "tokyo-skytree",
+          "title": "東京晴空塔 (Tokyo Skytree)",
+          "badge": "634m 地標 · 展望台",
+          "tapeColor": "pink",
+          "summary": "世界第二高建築，登上 350m 天望甲板與 450m 天望回廊 360 度俯瞰東京與富士山。",
+          "tags": [
+            "墨田區・押上",
+            "360度全景",
+            "Solamachi商場"
+          ],
+          "mdPath": "entries/tokyo-skytree.md"
+        },
+        {
+          "id": "shibuya-sky",
+          "title": "SHIBUYA SKY 澀谷展望台",
+          "badge": "露天頂樓 · 網美打卡",
+          "tapeColor": "blue",
+          "summary": "澀谷車站上方完全開放式屋頂展望台，無欄杆阻擋俯瞰澀谷十字路口人潮與夕陽夜景。",
+          "tags": [
+            "澀谷站直結",
+            "露天高空",
+            "日落夜景"
+          ],
+          "mdPath": "entries/shibuya-sky.md"
+        },
+        {
+          "id": "meiji-jingu",
+          "title": "明治神宮 (Meiji Jingu)",
+          "badge": "森林神社 · 文化遺產",
+          "tapeColor": "pink",
+          "summary": "代代木公園旁東京最大神社，穿過巨大鳥居與綠蔭碎石參道，常見傳統神前婚禮隊伍。",
+          "tags": [
+            "原宿・代代木",
+            "神前婚禮",
+            "森林參道"
+          ],
+          "mdPath": "entries/meiji-jingu.md"
+        },
+        {
+          "id": "teamlab-planets",
+          "title": "teamLab Planets TOKYO",
+          "badge": "沉浸式藝術 · 預約制",
+          "tapeColor": "blue",
+          "summary": "豐洲超人氣光影與水面互動藝術美術館，赤腳涉水穿梭於漂浮花海與夢幻光影之間。",
+          "tags": [
+            "江東區・豐洲",
+            "赤腳涉水",
+            "提早1個月預約"
+          ],
+          "mdPath": "entries/teamlab-planets.md"
+        },
+        {
+          "id": "tokyo-tower",
+          "title": "東京鐵塔 (Tokyo Tower)",
+          "badge": "經典地標 · 浪漫點燈",
+          "tapeColor": "pink",
+          "summary": "登上 150m 與 250m 展望台俯瞰市區，夜晚亮起溫暖橘黃燈光，塔下芝公園適合野餐賞櫻。",
+          "tags": [
+            "港區・芝公園",
+            "經典夜景",
+            "春季賞櫻"
+          ],
+          "mdPath": "entries/tokyo-tower.md"
+        },
+        {
+          "id": "roppongi-city-view",
+          "title": "六本木之丘展望台 (東京 City View)",
+          "badge": "52樓室內 · 雙塔同框",
+          "tapeColor": "blue",
+          "summary": "森大廈 52 樓挑高落地窗展望台，晴天可同時拍到東京鐵塔與晴空塔，拍攝東京鐵塔視角極佳。",
+          "tags": [
+            "港區・六本木",
+            "正對東京鐵塔",
+            "雨天備案"
+          ],
+          "mdPath": "entries/roppongi-city-view.md"
+        },
+        {
+          "id": "ueno-park-zoo",
+          "title": "上野恩賜公園與上野動物園",
+          "badge": "親子動物園 · 賞櫻名所",
+          "tapeColor": "pink",
+          "summary": "集結上野動物園大貓熊、美術館與博物館，春季為東京數一數二的賞櫻名所，週一休園。",
+          "tags": [
+            "台東區・上野",
+            "親子必去",
+            "大貓熊"
+          ],
+          "mdPath": "entries/ueno-park-zoo.md"
+        },
+        {
+          "id": "odaiba-rainbow-bridge",
+          "title": "台場海濱公園與彩虹大橋",
+          "badge": "海濱夜景 · 跨海步道",
+          "tapeColor": "blue",
+          "summary": "沙灘公園近距離欣賞彩虹大橋浪漫點燈，天氣好時可沿彩虹大橋人行步道步行橫越東京灣。",
+          "tags": [
+            "港區・台場",
+            "彩虹大橋",
+            "東京灣夜景"
+          ],
+          "mdPath": "entries/odaiba-rainbow-bridge.md"
+        }
+      ],
+      "food": [
+        {
+          "id": "sushi-dai-toyosu",
+          "title": "壽司大 (豐洲市場排隊名店)",
+          "badge": "清晨排隊 · 江戶前壽司",
+          "tapeColor": "pink",
+          "summary": "豐洲市場 6 街區頂級握壽司名店，主廚套餐約 10–12 貫現撈漁獲（鮪魚中腹、海膽、星鰻）。",
+          "tags": [
+            "¥4,000–6,000",
+            "豐洲市場",
+            "05:30營業"
+          ],
+          "mdPath": "entries/sushi-dai-toyosu.md"
+        },
+        {
+          "id": "izuei-ueno-unagi",
+          "title": "伊豆榮 (上野百年鰻魚飯老店)",
+          "badge": "1910創業 · 關東鰻魚飯",
+          "tapeColor": "blue",
+          "summary": "上野公園旁百年老舖，先蒸後烤的關東式做法使鰻魚軟嫩酥香，推薦招牌三層「うな重」。",
+          "tags": [
+            "¥3,500–6,000",
+            "上野公園旁",
+            "百年老店"
+          ],
+          "mdPath": "entries/izuei-ueno-unagi.md"
+        },
+        {
+          "id": "sushi-yamaken-ginza",
+          "title": "鮨 YAMAKEN (銀座黑鮪魚吃到飽)",
+          "badge": "90分鐘放題 · 預約制",
+          "tapeColor": "pink",
+          "summary": "銀座罕見黑鮪魚（本マグロ）大腹、中腹、赤身及海膽鮭魚卵握壽司 90 分鐘無限享用。",
+          "tags": [
+            "午餐¥8,800起",
+            "中央區・銀座",
+            "提早1-2週訂位"
+          ],
+          "mdPath": "entries/sushi-yamaken-ginza.md"
+        },
+        {
+          "id": "ginza-enzo-yakiniku",
+          "title": "銀座炎藏 (A5 黑毛和牛燒肉)",
+          "badge": "半包廂 · 專人代烤",
+          "tapeColor": "blue",
+          "summary": "選用油花均勻的 A5 等級黑毛和牛，半包廂優雅空間搭配專人代烤，推薦特選和牛與厚切牛舌。",
+          "tags": [
+            "¥10,000–20,000",
+            "銀座8丁目",
+            "A5黑毛和牛"
+          ],
+          "mdPath": "entries/ginza-enzo-yakiniku.md"
+        },
+        {
+          "id": "manten-sushi-nihonbashi",
+          "title": "Manten鮨 日本橋 (頂級 Omakase)",
+          "badge": "板前無菜單 · 職人饗宴",
+          "tapeColor": "pink",
+          "summary": "依當日最新鮮時令食材設計的板前 Omakase 套餐，從前菜、刺身到炙燒握壽司充滿驚喜。",
+          "tags": [
+            "午餐¥15,000起",
+            "日本橋室町",
+            "板前Omakase"
+          ],
+          "mdPath": "entries/manten-sushi-nihonbashi.md"
+        }
+      ],
+      "souvenirs": [
+        {
+          "id": "tokyo-station-souvenirs",
+          "title": "東京車站伴手禮與購物指南",
+          "badge": "交通樞紐 · 一站購足",
+          "tapeColor": "blue",
+          "summary": "新幹線與機場快線交會樞紐，行程最後一天可於站內商店街一次購足東京限定伴手禮盒。",
+          "tags": [
+            "東京車站",
+            "東京限定禮盒",
+            "搭機前採買"
+          ],
+          "mdPath": "entries/tokyo-station-souvenirs.md"
+        },
+        {
+          "id": "ginza-shopping",
+          "title": "銀座精品街與 Ginza Sony Park",
+          "badge": "精品旗艦 · 百貨專櫃",
+          "tapeColor": "pink",
+          "summary": "國際精品與老字號百貨林立，適合採購高品質和洋菓子禮盒，並順遊新開幕 Ginza Sony Park。",
+          "tags": [
+            "中央區・銀座",
+            "老字號百貨",
+            "2025新地標"
+          ],
+          "mdPath": "entries/ginza-shopping.md"
+        },
+        {
+          "id": "sensoji-kaminarimon",
+          "title": "淺草仲見世通傳統和菓子",
+          "badge": "江戶老舖 · 傳統點心",
+          "tapeColor": "blue",
+          "summary": "雷門通往淺草寺的歷史商店街，販售日式傳統和菓子、人形燒仙貝與江戶風紀念品。",
+          "tags": [
+            "淺草仲見世通",
+            "日式和菓子",
+            "江戶紀念品"
+          ],
+          "mdPath": "entries/sensoji-kaminarimon.md"
+        },
+        {
+          "id": "tokyo-skytree",
+          "title": "晴空塔 Solamachi 限定紀念品",
+          "badge": "300間店鋪 · 塔內商場",
+          "tapeColor": "pink",
+          "summary": "晴空塔下東京 Solamachi 購物中心匯集超過 300 間店鋪，可購買晴空塔限定造型伴手禮。",
+          "tags": [
+            "押上・晴空塔",
+            "晴空塔限定",
+            "300間店鋪"
+          ],
+          "mdPath": "entries/tokyo-skytree.md"
+        }
+      ]
+    },
+    {
+      "id": "osaka",
+      "name": "大阪",
+      "enName": "Osaka",
+      "icon": "🐙",
+      "badge": "關西 · 天下廚房",
+      "tapeColor": "pink",
+      "status": "ready",
+      "summary": "兼具道頓堀心齋橋購物、環球影城樂園與高密度美食的關西起點，已收錄 7 大主題情報。",
+      "tags": [
+        "3～7 天行程",
+        "道頓堀梅田",
+        "已收錄 7 篇"
+      ],
+      "spots": [
+        {
+          "id": "dotonbori-shinsaibashi",
+          "title": "道頓堀＋心齋橋商圈",
+          "badge": "必拍地標 · 購物",
+          "tapeColor": "blue",
+          "summary": "走過道頓堀橋即可看見著名固力果跑跑人招牌，周邊聚集藥妝、百貨與各式餐廳。",
+          "tags": [
+            "半天～晚上",
+            "固力果招牌",
+            "難波心齋橋"
+          ],
+          "mdPath": "entries/dotonbori-shinsaibashi.md"
+        },
+        {
+          "id": "universal-studios-japan",
+          "title": "大阪環球影城 (USJ)",
+          "badge": "主題樂園 · 全日",
+          "tapeColor": "pink",
+          "summary": "擁有超級任天堂世界、哈利波特魔法世界與小小兵樂園，親子與朋友出遊首選。",
+          "tags": [
+            "一整天",
+            "任天堂世界",
+            "此花區"
+          ],
+          "mdPath": "entries/universal-studios-japan.md"
+        },
+        {
+          "id": "osaka-castle",
+          "title": "大阪城 (Osaka Castle)",
+          "badge": "歷史古蹟 · 賞櫻",
+          "tapeColor": "blue",
+          "summary": "大阪最具代表性的歷史文化地標，天守閣與護城河景觀四季皆美，春季為賞櫻名所。",
+          "tags": [
+            "2～3 小時",
+            "天守閣",
+            "中央區"
+          ],
+          "mdPath": "entries/osaka-castle.md"
+        },
+        {
+          "id": "abeno-harukas",
+          "title": "阿倍野 HARUKAS 展望台",
+          "badge": "高空景觀 · 夜景",
+          "tapeColor": "pink",
+          "summary": "高樓觀景台無死角俯瞰大阪市區輪廓，推薦下午至傍晚登樓一次收集夕陽與夜景。",
+          "tags": [
+            "1～2 小時",
+            "百萬夜景",
+            "天王寺區"
+          ],
+          "mdPath": "entries/abeno-harukas.md"
+        },
+        {
+          "id": "tsutenkaku-shinsekai",
+          "title": "通天閣與新世界商圈",
+          "badge": "昭和懷舊 · 夜景",
+          "tapeColor": "blue",
+          "summary": "充滿復古立體招牌與霓虹燈的懷舊街區，登塔賞景後可順道品嚐發源於此的串炸。",
+          "tags": [
+            "2～3 小時",
+            "霓虹街拍",
+            "浪速區"
+          ],
+          "mdPath": "entries/tsutenkaku-shinsekai.md"
+        }
+      ],
+      "food": [
+        {
+          "id": "onigiri-gorichan",
+          "title": "おにぎりごりちゃん 手作飯糰",
+          "badge": "梅田排隊名店",
+          "tapeColor": "pink",
+          "summary": "中崎町超人氣現捏飯糰專門店，必點蛋黃醬油漬＋肉鬆，吃到一半可免費加高湯變茶泡飯。",
+          "tags": [
+            "茶泡飯二吃",
+            "蛋黃肉鬆",
+            "梅田・中崎町"
+          ],
+          "mdPath": "entries/onigiri-gorichan.md"
+        },
+        {
+          "id": "kuromon-market",
+          "title": "黑門市場海鮮小吃",
+          "badge": "大阪人的廚房",
+          "tapeColor": "blue",
+          "summary": "長約 580 公尺的拱廊市場，聚集現烤大干貝、生魚片、海鮮串燒與現榨果汁，雨天也能逛。",
+          "tags": [
+            "1～2 小時",
+            "現烤海鮮",
+            "日本橋・難波"
+          ],
+          "mdPath": "entries/kuromon-market.md"
+        },
+        {
+          "id": "dotonbori-shinsaibashi",
+          "title": "道頓堀章魚燒＆大阪燒",
+          "badge": "關西靈魂小吃",
+          "tapeColor": "pink",
+          "summary": "外酥內軟的現烤章魚燒、濃厚醬汁大阪燒與拉麵名店一級戰區，宵夜時段依然熱鬧。",
+          "tags": [
+            "章魚燒",
+            "大阪燒",
+            "道頓堀・難波"
+          ],
+          "mdPath": "entries/dotonbori-shinsaibashi.md"
+        },
+        {
+          "id": "tsutenkaku-shinsekai",
+          "title": "新世界元祖串炸 (串カツ)",
+          "badge": "通天閣名物",
+          "tapeColor": "blue",
+          "summary": "將肉類、海鮮與時蔬裹粉炸至金黃酥脆，搭配特製秘傳醬汁享用的大阪庶民美食。",
+          "tags": [
+            "串炸名物",
+            "晚餐宵夜",
+            "新世界商圈"
+          ],
+          "mdPath": "entries/tsutenkaku-shinsekai.md"
+        }
+      ],
+      "souvenirs": [
+        {
+          "id": "kuromon-market",
+          "title": "黑門市場和菓子與西洋糕點",
+          "badge": "傳統老舖點心",
+          "tapeColor": "blue",
+          "summary": "黑門市場拱廊兩側除了海鮮外，亦有多間老字號和菓子與西洋糕點鋪，適合挑選日系禮盒。",
+          "tags": [
+            "和菓子",
+            "西洋糕點",
+            "黑門市場"
+          ],
+          "mdPath": "entries/kuromon-market.md"
+        },
+        {
+          "id": "universal-studios-japan",
+          "title": "USJ 主題園區限定禮盒周邊",
+          "badge": "樂園限定紀念品",
+          "tapeColor": "pink",
+          "summary": "超級任天堂世界、哈利波特與小小兵商店限定販售的造型餅乾鐵盒、爆米花桶與角色周邊。",
+          "tags": [
+            "瑪利歐周邊",
+            "哈利波特",
+            "環球影城"
+          ],
+          "mdPath": "entries/universal-studios-japan.md"
+        },
+        {
+          "id": "dotonbori-shinsaibashi",
+          "title": "心齋橋藥妝與百貨專櫃伴手禮",
+          "badge": "一站式免稅採買",
+          "tapeColor": "blue",
+          "summary": "心齋橋筋商店街與周邊百貨聚集大型藥妝與美妝食品專櫃，適合回國前一次購足伴手禮。",
+          "tags": [
+            "藥妝採買",
+            "百貨禮盒",
+            "心齋橋"
+          ],
+          "mdPath": "entries/dotonbori-shinsaibashi.md"
+        }
+      ]
+    },
+    {
+      "id": "nagoya",
+      "name": "名古屋",
+      "enName": "Nagoya",
+      "icon": "🏯",
+      "badge": "中部 · 味噌美食之都",
+      "tapeColor": "blue",
+      "status": "coming_soon",
+      "summary": "前往白川鄉合掌村與北陸的重要樞紐，鰻魚飯三吃與味噌豬排攻略陸續加入中。",
+      "tags": [
+        "鰻魚飯三吃",
+        "吉卜力公園",
+        "蝦餅伴手禮"
+      ],
+      "spots": [],
+      "food": [],
+      "souvenirs": []
+    },
+    {
+      "id": "hokkaido",
+      "name": "北海道",
+      "enName": "Hokkaido",
+      "icon": "❄️",
+      "badge": "北國 · 自然與甜點王國",
+      "tapeColor": "pink",
+      "status": "coming_soon",
+      "summary": "札幌湯咖哩、小樽運河浪漫雪景與六花亭、LeTAO 等乳製品甜點伴手禮陸續加入中。",
+      "tags": [
+        "札幌小樽",
+        "海鮮湯咖哩",
+        "白色戀人"
+      ],
+      "spots": [],
+      "food": [],
+      "souvenirs": []
+    }
+  ]
+}
